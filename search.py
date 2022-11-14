@@ -119,6 +119,7 @@ def search_realcanadiansuperstore(code : str):
 def find_item_list(item_id):
     # run 6 function search in same time and retunr list 
     
+
     a = ThreadWithResult(target=search_loblaws ,args= (item_id,))
     b =  ThreadWithResult(target=search_TNT , args= (item_id,))
     c =  ThreadWithResult(target=search_saveonfoods , args= (item_id,))
@@ -144,7 +145,7 @@ def find_item_list(item_id):
     nofrills = e.result
     realcanadiansuperstore = f.result
     
-    store = [loblaws, TNT, saveonfoods, nofrills, realcanadiansuperstore]
+    store = [loblaws, TNT, saveonfoods, nofrills, realcanadiansuperstore, wallmart]
     all_list = []
     
     for i in store:
